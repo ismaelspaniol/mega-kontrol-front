@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 
-import {notes} from "../actions";
+import {notes, auth} from "../actions";
 
 
 class PonyNote extends Component {
 
     componentDidMount() {
+        this.resetForm();
         this.props.fetchNotes();
     }
 
@@ -39,7 +40,7 @@ class PonyNote extends Component {
                 <h2>Welcome to PonyNote!</h2>
                 <hr />
                 <div style={{textAlign: "right"}}>
-                    {/* {this.props.user.username} (<a onClick={this.props.logout}>logout</a>) */}
+                    {this.props.user.username} (<a href="/#" onClick={this.props.logout}>logout</a>)
                 </div>
 
                 <h3>Add new note</h3>
@@ -74,7 +75,7 @@ class PonyNote extends Component {
 const mapStateToProps = state => {
     return {
         notes: state.notes,
-        // user: state.auth.user,
+        user: state.auth.user,
     }
 }
 
@@ -91,9 +92,8 @@ const mapDispatchToProps = dispatch => {
         },
         deleteNote: (id) => {
             dispatch(notes.deleteNote(id));
-        }
-        // ,
-        // logout: () => dispatch(auth.logout()),
+        },
+        logout: () => dispatch(auth.logout()),
     }
 }
 
