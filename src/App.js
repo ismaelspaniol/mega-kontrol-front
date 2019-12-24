@@ -1,20 +1,15 @@
 import React, { Component } from 'react';
 import { Route, Switch, BrowserRouter, Redirect } from 'react-router-dom';
-import { auth } from "./actions"
+import { auth } from "./store/actions"
 import NotFound from "./components/NotFound";
 // import Login from './components/login'
 import Register from "./components/Register";
 import PonyNote from './components/PonyNote'
-import ponyApp from "./reducers"
 import './App.css';
 import Login2 from "./components/Login2"
-
-import { createStore, applyMiddleware } from "redux"
 import { Provider, connect } from "react-redux";
-import thunk from "redux-thunk";
 
-let store = createStore(ponyApp, applyMiddleware(thunk));
-
+import  store  from "./store/store"
 
 class RootContainerComponent extends Component {
 

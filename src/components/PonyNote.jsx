@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 
-import {notes, auth} from "../actions";
+import {notes, auth} from "../store/actions";
 
 
 class PonyNote extends Component {
