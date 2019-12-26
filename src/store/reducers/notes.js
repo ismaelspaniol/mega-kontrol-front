@@ -10,6 +10,7 @@ export default function notes(state = initialState, action) {
       return [...state, action.note];
 
     case 'UPDATE_NOTE':
+      console.log('UPDATE_NOTE reducers/notes');
       let noteToUpdate = noteList[action.index]
       noteToUpdate.text = action.note.text;
       noteList.splice(action.index, 1, noteToUpdate);
