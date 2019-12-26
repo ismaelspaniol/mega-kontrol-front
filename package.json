@@ -14,7 +14,8 @@
     "react-scripts": "3.3.0",
     "redux": "^4.0.4",
     "redux-thunk": "^2.3.0",
-    "webpack-bundle-tracker": "^0.4.3"
+    "webpack-bundle-tracker": "^0.4.3",
+    "proxy": "http://localhost:8080"
   },
   "scripts": {
     "start": "react-scripts start",

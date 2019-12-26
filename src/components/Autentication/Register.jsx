@@ -3,9 +3,9 @@ import {connect} from "react-redux";
 
 import {Link, Redirect} from "react-router-dom";
 
-import {auth} from "../store/actions";
+import {auth} from "../../store/actions";
 
-class Login2 extends Component {
+class Login extends Component {
 
   state = {
     username: "",
@@ -49,7 +49,7 @@ class Login2 extends Component {
           </p>
 
           <p>
-            Already have an account? <Link to="/login2">Login</Link>
+            Already have an account? <Link to="/login">Login</Link>
           </p>
         </fieldset>
       </form>
@@ -76,4 +76,4 @@ const mapDispatchToProps = dispatch => {
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Login2);
+export default connect(mapStateToProps, mapDispatchToProps)(Login);

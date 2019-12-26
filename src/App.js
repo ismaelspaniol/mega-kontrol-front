@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { Route, Switch, BrowserRouter, Redirect } from 'react-router-dom';
 import { auth } from "./store/actions"
-import NotFound from "./components/NotFound";
+import NotFound from "./components/menssage/NotFound";
 // import Login from './components/login'
-import Register from "./components/Register";
+import Register from "./components/Autentication/Register";
 import PonyNote from './components/PonyNote'
 import './App.css';
-import Login2 from "./components/Login2"
+import Login from "./components/Autentication/Login"
 import { Provider, connect } from "react-redux";
 
 import  store  from "./store/store"
@@ -36,7 +36,7 @@ class RootContainerComponent extends Component {
         <Switch>
           <PrivateRoute exact path="/" component={PonyNote} />
           <Route exact path="/register" component={Register} />
-          <Route exact path="/login2" component={Login2} />
+          <Route exact path="/login" component={Login} />
           <Route component={NotFound} />
         </Switch>
       </BrowserRouter>
